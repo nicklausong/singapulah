@@ -1,13 +1,27 @@
 <template>
-  <div id="app">
-    <!-- <img src="./assets/logo.png"> -->
-    <router-view/>
+  <div>
+    <div id="app" v-if="notLoggedIn == true">
+      <router-link :to="{ name: 'Home' }">
+        <button type="button" v-on:click="notLoggedIn = false">Login</button>
+      </router-link>
+      <router-view></router-view>
+    </div>
+    <div id="app" v-if="notLoggedIn != true">
+      <router-link :to="{ name: 'Home' }">LOGGED IN</router-link>
+      <router-link :to="{ name: 'Rank' }">Rank Friends!</router-link>
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  data () {
+    return {
+      notLoggedIn: true
+    }
+  }
 }
 </script>
 
