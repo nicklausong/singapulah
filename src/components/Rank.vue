@@ -2,7 +2,7 @@
   <div class="rank">
     <h2>Draggable Wrapper</h2>
     <draggable v-model="exampleList">
-      <div v-for="text in exampleList" :key="text"></div>
+      <div v-for="text in exampleList" :key="text">{{text}}</div>
     </draggable>
   </div>
 </template>
@@ -19,11 +19,11 @@ export default {
   data() {
     return {
       exampleList: [
-        'Item 1',
-        'Item 2',
-        'Item 3',
-        'Item 4',
-        'Item 5'
+        'Hui Ting',
+        'Zhi Ming',
+        'Chun Cheong',
+        'Nicklaus',
+        'Sing Jie'
       ]
     }
   }
